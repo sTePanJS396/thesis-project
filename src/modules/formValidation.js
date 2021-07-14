@@ -1,5 +1,5 @@
 // Валидация данных
-export function formValidation() {
+export const formValidation = () => {
     document.querySelectorAll('.form-control').forEach(item => item.setAttribute('required', 'required'))
     const userForm = document.querySelector('#form');
     userForm.addEventListener('input', (event) => {
@@ -23,9 +23,10 @@ export function formValidation() {
         event.target.value = event.target.value.trim();
         if (event.target.type === 'text') {
             let newStr;
-            function firstLiterals(str) {
+
+            const firstLiterals = (str) => {
                 if (!str) return str;
-               
+
                 return str.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' ')
             }
             newStr = firstLiterals(event.target.value);

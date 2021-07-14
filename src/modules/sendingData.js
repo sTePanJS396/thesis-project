@@ -1,6 +1,6 @@
 // Отправка данных
-export function sendingData() {
-    function form() {
+export const sendingData = () => {
+    const form = () => {
         const errorMessage = 'Что-то пошло не так...';
         const loadMessage = 'Загрузка...';
         const successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
@@ -22,18 +22,20 @@ export function sendingData() {
                 body[key] = val;
             });
 
-            postData(body).then(() => {statusMessage.textContent = successMessage}, (error) => {
+            postData(body).then(() => {
+                statusMessage.textContent = successMessage
+            }, (error) => {
                 statusMessage.textContent = errorMessage;
                 console.error(error);
             });
-					
+
         });
 
-        function postData(body) {
+        const postData = (body) => {
             return new Promise((resolve, reject) => {
                 const request = new XMLHttpRequest();
                 request.addEventListener('readystatechange', () => {
-                    function modalWins() {
+                    const modalWins = () => {
                         setTimeout(() => {
                             document.querySelector('.modal-callback').style.display = 'none';
                             document.querySelector('.modal-overlay').style.display = 'none';
@@ -46,8 +48,8 @@ export function sendingData() {
                     }
                     if (request.status === 200) {
                         resolve();
-                        document.querySelectorAll('input').forEach(item => { 
-                            if(item.type === 'text' || item.type === 'tel') {
+                        document.querySelectorAll('input').forEach(item => {
+                            if (item.type === 'text' || item.type === 'tel') {
                                 item.value = '';
                             }
                         })
@@ -56,8 +58,8 @@ export function sendingData() {
                         return;
                     } else {
                         reject(request.status);
-                        document.querySelectorAll('input').forEach(item => { 
-                            if(item.type === 'text' || item.type === 'tel') {
+                        document.querySelectorAll('input').forEach(item => {
+                            if (item.type === 'text' || item.type === 'tel') {
                                 item.value = '';
                             }
                         })

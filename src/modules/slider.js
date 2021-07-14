@@ -1,14 +1,14 @@
 // Главный слайдер
-export function slider() {
-    let indexSlider = 1;
-    const sliderItem = document.querySelectorAll('.item');
-    const table = document.querySelectorAll('.table');
+export const slider = () => {
+  let indexSlider = 1;
+  const sliderItem = document.querySelectorAll('.item');
+  const table = document.querySelectorAll('.table');
 
   table.forEach(item => {
-        item.classList.add('table')
-    })
+    item.classList.add('table')
+  })
 
-  function showSlides(n) {
+  const showSlides = (n) => {
     if (n > sliderItem.length) {
       indexSlider = 1;
     }
@@ -30,7 +30,7 @@ export function slider() {
 
   showSlides(indexSlider);
 
-  function nextSlides(n) {
+  const nextSlides = (n) => {
     showSlides(indexSlider += n);
   }
 

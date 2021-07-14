@@ -1,5 +1,5 @@
 // Аккордион
-export function accordeon() {
+export const accordeon = () => {
     const elements = document.querySelectorAll('.accordeon .element');
     const element = document.querySelector('.accordeon');
 

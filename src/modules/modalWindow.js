@@ -1,5 +1,5 @@
 // Модальное окно и подложка
-export function modalWindow() {
+export const modalWindow = () => {
     const callback = document.querySelector('.modal-callback')
     const modalOverlay = document.querySelector('.modal-overlay');
     const modalBtn = document.querySelectorAll('a')[5];
@@ -14,8 +14,8 @@ export function modalWindow() {
         callback.style.display = 'none';
         modalOverlay.style.display = 'none';
 
-        document.querySelectorAll('input').forEach(item => { 
-            if(item.type === 'text' || item.type === 'tel') {
+        document.querySelectorAll('input').forEach(item => {
+            if (item.type === 'text' || item.type === 'tel') {
                 item.value = '';
             }
         })

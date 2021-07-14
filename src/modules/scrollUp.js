@@ -1,5 +1,5 @@
 // Прокрутка страницы
-export function scrollUp() {
+export const scrollUp = () => {
     document.querySelector('html').style.cssText = 'scroll-behavior: smooth;';
     document.querySelector('.top-slider').setAttribute('id', 'top')
     const upButton = document.querySelector('.up');
