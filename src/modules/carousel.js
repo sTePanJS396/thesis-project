@@ -1,7 +1,7 @@
 // Карусель
-export function carousel() {
+export const carousel = () => {
 
-  function _createForOfIteratorHelper(o, allowArrayLike) {
+  const _createForOfIteratorHelper = (o, allowArrayLike) => {
     let it;
     if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
       if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
@@ -55,13 +55,13 @@ export function carousel() {
 
 
 
-  function _classCallCheck(instance, Constructor) {
+  const _classCallCheck = (instance, Constructor) => {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
   }
 
-  function _defineProperties(target, props) {
+  const _defineProperties = (target, props) => {
     for (let i = 0; i < props.length; i++) {
       let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
@@ -71,7 +71,7 @@ export function carousel() {
     }
   }
 
-  function _createClass(Constructor, protoProps, staticProps) {
+  const _createClass = (Constructor, protoProps, staticProps) => {
     if (protoProps) _defineProperties(Constructor.prototype, protoProps);
     if (staticProps) _defineProperties(Constructor, staticProps);
     return Constructor;
